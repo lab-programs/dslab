@@ -1,5 +1,30 @@
 //Implementation of everything in SLL for exam with doc
 
+/*
+
+1) Singly Linked List with the following operations:
+a. Inserting a node( Any desired position)
+b. Deleting first node from the list
+c. Display
+
+3) Singly Linked List with the following operations:
+a. Inserting a node at first position
+b. Deleting a node (Any desired position)
+c. Display
+
+4) Singly Linked List with the following operations:
+a. Inserting a node( Any desired position)
+b. Deleting last node from the list
+c. Display
+
+5) Singly Linked List with the following operations:
+a. Inserting a node at end of the list.
+b. Deleting a node (Any desired position)
+c. Display
+
+*/
+
+
 //Header files
 #include<stdio.h>
 #include<stdlib.h>
