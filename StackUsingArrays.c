@@ -1,3 +1,19 @@
+/*
+
+2)
+a. Primitive operations on Stacks using arrays.
+b. Binary search using recursion.
+
+6)
+a. Primitive operations on Stacks using arrays.
+b. GCD using recursion.
+
+8)
+a. Primitive operations on Stacks using arrays.
+b. Tower of Hanoi problem for n disks using recursion
+
+*/
+
 #include<stdio.h>
 #define n 5
 
