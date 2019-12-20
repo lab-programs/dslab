@@ -129,7 +129,7 @@ Node delete(Node start, int pos) {
 				curr->link = curr->link->link;
         
       			//Print that the element is deleted
-      			printf("%d deleted\n", start->data);
+      			printf("%d deleted\n", temp->data);
 			
      	 		//Free the allocated memory of the node
 			free(temp);
