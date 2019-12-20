@@ -21,19 +21,19 @@ int size = 0;
 
 
 //Function to dynamically allocate space for a node 
-// return the pointer to node
+//return the pointer to node
 Node getNode(int item) {
 
-  //Use malloc to allocate m/y
+  	//Use malloc to allocate m/y
 	Node temp = (Node) malloc(sizeof(struct node));
   
-  //Assign data field of temp to item passed as paramenter
+  	//Assign data field of temp to item passed as paramenter
 	temp->data = item;
   
-  //Assign link field of temp to NULL
+  	//Assign link field of temp to NULL
 	temp->link = NULL;
   
-  //Return temp
+  	//Return temp
 	return temp;
 }
 
@@ -41,40 +41,40 @@ Node getNode(int item) {
 //General Insert function with O(N) time complexity
 void insert(Node* curr, int item, int pos) {
 	
-  //Check if the position given is valid
+	  //Check if the position given is valid
 	if(pos < 1 || pos > size+1) 
 		printf("Invalid Position\n");
 	else {
   
-    //Keep decrementing pos in a while 
-    //loop until it becomes zero
+	 	//Keep decrementing pos in a while 
+		//loop until it becomes zero
 		while(pos--) {
     
-      //Check if pos is equal to zero
+      		//Check if pos is equal to zero
 			if(pos == 0) {
       
-        //Create a node with the item as parameter to temp
+     	   			//Create a node with the item as parameter to temp
 				Node temp = getNode(item);
         
-        //Assign link field of to the content of the 
-        //pointer to the (pointer to node)/curr 
+        			//Assign link field of to the content of the 
+        			//pointer to the (pointer to node)/curr 
 				temp->link = *curr;
         
-        //Point the content of pointer to curr to 
-        //the node which temp is pointing
+        			//Point the content of pointer to curr to 
+        			//the node which temp is pointing
 				*curr = temp;
 			}
 			else
         
-        //Make pointer to the pointer to node point to 
-        //the next pointer to node it was originally pointing
+        			//Make pointer to the pointer to node point to 
+        			//the next pointer to node it was originally pointing
 				curr = &(*curr)->link;
 		}
     
-    //INCREMENT SIZE VALUE
+    		//INCREMENT SIZE VALUE
 		size++;
     
-    //Print item was inserted
+    		//Print item was inserted
 		printf("%d inserted\n", item);
 	}
 }
@@ -83,75 +83,75 @@ void insert(Node* curr, int item, int pos) {
 //General Delete Program with O(N) complexity
 Node delete(Node start, int pos) {
 	
-  //Check if position is valid, start is pointing to 
-  //no node or size of the SLL is zero
+	//Check if position is valid, start is pointing to 
+	//no node or size of the SLL is zero
 	if(pos < 1 || pos > size || start == NULL || size == 0) 
 		printf("Invalid Position/List is empty.\n");
 	else {
   
-    //Decrement the value of size
+    		//Decrement the value of size
 		size--;
     
-    //Check if the position is equal to 1
+    		//Check if the position is equal to 1
 		if(pos == 1) {
     
-      //Create a pointer temp to point to the node 
-      //which the link field of start pointer is pointing
+      			//Create a pointer temp to point to the node 
+      			//which the link field of start pointer is pointing
 			Node temp = start->link;
       
-      //Print that the element is deleted
-      printf("%d deleted\n", start->data);
+      			//Print that the element is deleted
+      			printf("%d deleted\n", start->data);
       
-      //Free the allocated memory for the node
+      			//Free the allocated memory for the node
 			free(start);
       
-      //Return the pointer to node: temp
+      			//Return the pointer to node: temp
 			return temp;
 		}
 		else {
-      //Create a pointer to node: curr and assign it
-      //to start and another pointer to node: temp
+      			//Create a pointer to node: curr and assign it
+      			//to start and another pointer to node: temp
 			Node curr = start, temp;
       
-      //Keep pointing curr to the link field of curr
-      //until you reach the node just before the node
-      //you want to delete
+      			//Keep pointing curr to the link field of curr
+      			//until you reach the node just before the node
+      			//you want to delete
 			for(int i = 1; i < pos-1; i++) 
 				curr = curr->link;
         
-      //Assign temp to the link field of curr
+      			//Assign temp to the link field of curr
 			temp = curr->link;
       
-      //If the node pointed by the link field of curr
-      //is not null, then link the curr whith the link 
-      //field of the link field of curr
+      			//If the node pointed by the link field of curr
+      			//is not null, then link the curr whith the link 
+      			//field of the link field of curr
 			if(curr->link != NULL)
 				curr->link = curr->link->link;
         
-      //Print that the element is deleted
-      printf("%d deleted\n", start->data);
+      			//Print that the element is deleted
+      			printf("%d deleted\n", start->data);
 			
-      //Free the allocated memory of the node
+     	 		//Free the allocated memory of the node
 			free(temp);
 		}
 	}
   
-  //Return the pointer to first node: start
+  	//Return the pointer to first node: start
 	return start;
 }
 
 
 void display(Node start) {
 
-  //Check if start is pointing to anything or not
+  	//Check if start is pointing to anything or not
 	if(start == NULL)
 		printf("List is empty\n");
 	else {
   
-    //Start printing
+    		//Start printing
 		printf("List: ");
     
-    //Print and move to the next node
+    		//Print and move to the next node
 		while(start != NULL) {
 			printf("%d  ", start->data);
 			start = start->link;
