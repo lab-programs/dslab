@@ -128,6 +128,9 @@ Node delete(Node start, int pos) {
 			if(curr->link != NULL)
 				curr->link = curr->link->link;
         
+      //Print that the element is deleted
+      printf("%d deleted\n", start->data);
+			
       //Free the allocated memory of the node
 			free(temp);
 		}
