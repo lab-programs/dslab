@@ -19,6 +19,7 @@ int getans(char x, int a, int b) {
 		case '-': return a-b;
 		case '*': return a*b;
 		case '/': return a/b;
+		case '%': return a%b;
 		case '^': return a^b;
 	}
 }
@@ -42,7 +43,7 @@ void evaluate(char* pf) {
 
 int main() {
 	char pf[n];
-	printf("Enter valid postfix expression(In the expression, you can use +, -, *, / and ^ only): ");
+	printf("Enter valid postfix expression(In the expression, you can use +, -, *, /, % and ^ only): ");
 	scanf("%s", pf);
 	evaluate(pf);
 }
