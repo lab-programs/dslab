@@ -25,9 +25,9 @@ void enqueue() {
 }
 
 void dequeue() {
-	if(count == 0 || f > r) {
-		f == -1;
-		r == -1;
+	if(count == 0 || f > r || f == -1) {
+		f = -1;
+		r = -1;
 		printf("Underflow\n\n");
 	}
 	else {
@@ -38,7 +38,7 @@ void dequeue() {
 }
 
 void display() {
-	if(count == 0 || f > r) 
+	if(count == 0 || f > r || f == -1) 
 		printf("Underflow\n\n");
 	else {
 		printf("Queue: ");
@@ -58,8 +58,8 @@ int main() {
 			case 1: enqueue();		break;
 			case 2: dequeue();  	break;
 			case 3: display();  	break;
-			case 4: printf("Terminated .."); return 0;
-			default: printf("Terminated ..\n\n");
+			case 4: printf("Terminated ..\n\n"); return 0;
+			default: printf("Invalid Choice\n\n");
 		}
 	} while(ch != 4);
 }
