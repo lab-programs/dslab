@@ -1,6 +1,6 @@
 /*
 
-16) Primitive operations on linear queue using arrays
+17) Implement Circular queue using arrays.
 
 */
 
