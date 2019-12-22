@@ -31,8 +31,34 @@ Node insert(Node start) {
 	printf("Enter the power of the term: ");
 	scanf("%d", &p);
 	Node temp = getNode(c, p);
-	temp->link = start;
-	return temp;
+	if(start == NULL)
+		return temp;
+	else if(start->power <= temp->power) {
+		temp->link = start;
+		return temp;
+	}
+	else {
+		Node curr;
+		if(start->link == NULL) {
+			start->link = temp;
+			return start;
+		}
+		for(curr = start; curr->link->link != NULL; curr = curr->link) {
+			if(curr->link->power <= temp->power) {
+				temp->link = curr->link;
+				curr->link = temp;
+				return start;
+			}
+		}
+		if(curr->link->power <= temp->power) {
+			temp->link = curr->link;
+			curr->link = temp;
+			return start;
+		}
+		else 
+			curr->link->link = temp;
+		return start;
+	}
 }
 
 void display(Node start) {
