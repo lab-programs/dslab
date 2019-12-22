@@ -31,11 +31,6 @@ Node insert(Node start) {
 	else if(start->data >= item) {
 			temp->link = start;
 			return temp;
-		//}
-		//else {
-		//	start->link = temp;
-		//	return start;
-		//}
 	}
 	else {
 		Node curr;
